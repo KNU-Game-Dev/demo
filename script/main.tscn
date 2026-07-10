@@ -3,14 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://khmdw1j5e6cd" path="res://script/node_2d.tscn" id="1_jsuvk"]
 [ext_resource type="PackedScene" uid="uid://bx2jxv4kwnogm" path="res://script/node_2d(2).tscn" id="1_oxynd"]
 [ext_resource type="PackedScene" uid="uid://bla5gwmniuqdj" path="res://script/sub_map_1.tscn" id="3_wekt7"]
+[ext_resource type="PackedScene" uid="uid://d6oei6efkdpx" path="res://script/sub_map_1_1.tscn" id="4_u7f18"]
 
 [node name="Node2D" type="Node2D" unique_id=1368550212]
 
-[node name="MainMap2" parent="." unique_id=1100958087 instance=ExtResource("1_oxynd")]
+[node name="SubMap_2" type="Node2D" parent="." unique_id=929500927]
+
+[node name="SubMap_1" type="Node2D" parent="." unique_id=113497038]
+position = Vector2(0, 392)
+
+[node name="SubMap_1_Main" parent="SubMap_1" unique_id=787093435 instance=ExtResource("3_wekt7")]
+position = Vector2(1200, -488)
+
+[node name="SubMap_1_1" parent="SubMap_1" unique_id=1411057726 instance=ExtResource("4_u7f18")]
+position = Vector2(584, -488)
+
+[node name="MainMap" type="Node2D" parent="." unique_id=1682913558]
+
+[node name="MainMap2" parent="MainMap" unique_id=1100958087 instance=ExtResource("1_oxynd")]
+visible = false
 position = Vector2(0, -496)
 
-[node name="MainMap" parent="." unique_id=1005123134 instance=ExtResource("1_jsuvk")]
+[node name="MainMap" parent="MainMap" unique_id=1005123134 instance=ExtResource("1_jsuvk")]
 position = Vector2(-32, 1)
-
-[node name="SubMap_1" parent="." unique_id=147856624 instance=ExtResource("3_wekt7")]
-position = Vector2(584, -496)

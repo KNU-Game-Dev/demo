@@ -8,6 +8,8 @@ const SPEED = 200.0
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 
+	z_index = int(global_position.y + 16)
+	
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
 	elif Input.is_action_pressed("ui_left"):

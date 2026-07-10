@@ -54,7 +54,7 @@ texture = ExtResource("1_h4dfm")
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.8934746, -8, 3.1233158, 8, 8, 8, 8, -8)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.856185, -8, -4.856185)
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.6978817, -8, -2.6978817, 8, -8, 8)
 3:1/0 = 0
@@ -447,7 +447,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0tdgn"]
 radius = 16.0
-height = 64.0
+height = 32.0
 
 [node name="MainMap" type="Node2D" unique_id=1005123134]
 position = Vector2(-32, 0)
@@ -569,7 +569,7 @@ sprite_frames = SubResource("SpriteFrames_45p6f")
 animation = &"stop_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1765210514]
-position = Vector2(0, -1.5258789e-05)
+position = Vector2(0, 15.999985)
 shape = SubResource("CapsuleShape2D_0tdgn")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1492549506]
