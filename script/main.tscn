@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://t6h428ejkx25"]
+
+[ext_resource type="PackedScene" uid="uid://khmdw1j5e6cd" path="res://script/node_2d.tscn" id="1_jsuvk"]
+[ext_resource type="PackedScene" uid="uid://bx2jxv4kwnogm" path="res://script/node_2d(2).tscn" id="1_oxynd"]
+[ext_resource type="PackedScene" uid="uid://bla5gwmniuqdj" path="res://script/sub_map_1.tscn" id="3_wekt7"]
+
+[node name="Node2D" type="Node2D" unique_id=1368550212]
+
+[node name="MainMap2" parent="." unique_id=1100958087 instance=ExtResource("1_oxynd")]
+position = Vector2(0, -496)
+
+[node name="MainMap" parent="." unique_id=1005123134 instance=ExtResource("1_jsuvk")]
+position = Vector2(-32, 1)
+
+[node name="SubMap_1" parent="." unique_id=147856624 instance=ExtResource("3_wekt7")]
+position = Vector2(584, -496)

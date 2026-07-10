@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://jqg82w4dj82p" path="res://BoxEntered.gd" id="3_qs6e5"]
 [ext_resource type="Script" uid="uid://bolyxhe0d7hfm" path="res://BoxOpen2.gd" id="5_dxwoj"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7hxo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxwoj"]
 texture = ExtResource("1_h4dfm")
 1:0/0 = 0
 3:0/0 = 0
@@ -42,9 +42,9 @@ texture = ExtResource("1_h4dfm")
 6:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_vg7gw"]
-sources/0 = SubResource("TileSetAtlasSource_q7hxo")
+sources/0 = SubResource("TileSetAtlasSource_dxwoj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0tdgn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_178c0"]
 texture = ExtResource("1_h4dfm")
 1:0/0 = 0
 3:0/0 = 0
@@ -87,9 +87,9 @@ texture = ExtResource("1_h4dfm")
 
 [sub_resource type="TileSet" id="TileSet_45p6f"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_0tdgn")
+sources/0 = SubResource("TileSetAtlasSource_178c0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qs6e5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yrasj"]
 texture = ExtResource("2_0tdgn")
 0:0/0 = 0
 1:0/0 = 0
@@ -141,9 +141,9 @@ texture = ExtResource("2_0tdgn")
 
 [sub_resource type="TileSet" id="TileSet_kipx2"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_qs6e5")
+sources/0 = SubResource("TileSetAtlasSource_yrasj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxwoj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlmmo"]
 texture = ExtResource("2_0tdgn")
 0:0/0 = 0
 1:0/0 = 0
@@ -187,7 +187,7 @@ texture = ExtResource("2_0tdgn")
 8:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_061pf"]
-sources/0 = SubResource("TileSetAtlasSource_dxwoj")
+sources/0 = SubResource("TileSetAtlasSource_mlmmo")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6l5k"]
 atlas = ExtResource("3_q7hxo")
@@ -277,6 +277,18 @@ size = Vector2(20, 5.333333)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vg7gw"]
 size = Vector2(21.33333, 17.166677)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxwoj"]
+size = Vector2(10.666672, 18.666744)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_178c0"]
+size = Vector2(18.666672, 23.999987)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrasj"]
+size = Vector2(20, 10.666681)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlmmo"]
+size = Vector2(16.000004, 26.666637)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t14c6"]
 atlas = ExtResource("1_lbsit")
@@ -437,7 +449,7 @@ animations = [{
 radius = 16.0
 height = 64.0
 
-[node name="Node2D" type="Node2D" unique_id=1005123134]
+[node name="MainMap" type="Node2D" unique_id=1005123134]
 position = Vector2(-32, 0)
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1475554592]
@@ -511,19 +523,19 @@ scale = Vector2(3, 3)
 script = ExtResource("5_dxwoj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D3" unique_id=452424272]
-position = Vector2(-40, -133.33333)
+position = Vector2(-40.000004, -133.33333)
 sprite_frames = SubResource("SpriteFrames_fixfo")
 animation = &"open2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=294422391]
-position = Vector2(-40, -136.00003)
-shape = SubResource("RectangleShape2D_qs6e5")
+position = Vector2(-42.66668, -134.66673)
+shape = SubResource("RectangleShape2D_dxwoj")
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D3" unique_id=1887907450]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3/Area2D" unique_id=789075311]
-position = Vector2(-40, -131.25005)
-shape = SubResource("RectangleShape2D_vg7gw")
+position = Vector2(-40.000008, -134.6667)
+shape = SubResource("RectangleShape2D_178c0")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=72126665]
 position = Vector2(736.00006, 720)
@@ -536,14 +548,15 @@ sprite_frames = SubResource("SpriteFrames_fixfo")
 animation = &"open2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1390518126]
-position = Vector2(-40, -136.00003)
-shape = SubResource("RectangleShape2D_qs6e5")
+position = Vector2(-42.66664, -136.00003)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_yrasj")
 
 [node name="Area2D" type="Area2D" parent="StaticBody2D4" unique_id=1752905547]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4/Area2D" unique_id=726183015]
-position = Vector2(-40, -131.25005)
-shape = SubResource("RectangleShape2D_vg7gw")
+position = Vector2(-45.33333, -136)
+shape = SubResource("RectangleShape2D_mlmmo")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=417876544]
 position = Vector2(320, 248.00002)
@@ -562,6 +575,8 @@ shape = SubResource("CapsuleShape2D_0tdgn")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1492549506]
 visible = false
 zoom = Vector2(1.5, 1.5)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=140952498]
 
 [connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_area_2d_body_exited"]
