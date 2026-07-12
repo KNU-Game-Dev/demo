@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://t6h428ejkx25"]
 
-[ext_resource type="PackedScene" uid="uid://khmdw1j5e6cd" path="res://script/node_2d.tscn" id="1_jsuvk"]
-[ext_resource type="PackedScene" uid="uid://bx2jxv4kwnogm" path="res://script/node_2d(2).tscn" id="1_oxynd"]
-[ext_resource type="PackedScene" uid="uid://bla5gwmniuqdj" path="res://script/sub_map_1.tscn" id="3_wekt7"]
-[ext_resource type="PackedScene" uid="uid://d6oei6efkdpx" path="res://script/sub_map_1_1.tscn" id="4_u7f18"]
+[ext_resource type="PackedScene" uid="uid://khmdw1j5e6cd" path="res://scene/main_map/main_map_1.tscn" id="1_jsuvk"]
+[ext_resource type="PackedScene" uid="uid://bx2jxv4kwnogm" path="res://scene/main_map/main_map_2.tscn" id="1_oxynd"]
+[ext_resource type="PackedScene" uid="uid://bla5gwmniuqdj" path="res://scene/sub_map_1/sub_map_1.tscn" id="3_wekt7"]
+[ext_resource type="PackedScene" uid="uid://d6oei6efkdpx" path="res://scene/sub_map_1/sub_map_1_1.tscn" id="4_u7f18"]
+[ext_resource type="PackedScene" uid="uid://dpv438rv6yg8k" path="res://scene/menu/game_menu.tscn" id="5_5ls8r"]
 
 [node name="Node2D" type="Node2D" unique_id=1368550212]
 
@@ -26,3 +27,9 @@ position = Vector2(0, -496)
 
 [node name="MainMap" parent="MainMap" unique_id=1005123134 instance=ExtResource("1_jsuvk")]
 position = Vector2(-32, 1)
+
+[node name="GameMenu" parent="." unique_id=535715062 instance=ExtResource("5_5ls8r")]
+offset_left = -1104.0
+offset_top = -568.0
+offset_right = -1104.0
+offset_bottom = -568.0

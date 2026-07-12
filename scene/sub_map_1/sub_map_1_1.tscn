@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://2t4vk00ev6sp" path="res://sprite/Objects/Wood_Bridge.png" id="3_b3skc"]
 [ext_resource type="Texture2D" uid="uid://br2ey2bd3n3fd" path="res://sprite/Objects/Free_Chicken_House.png" id="4_fc5sc"]
 [ext_resource type="Texture2D" uid="uid://dweajnr1205hp" path="res://sprite/Objects/Basic Grass Biom things 1.png" id="5_6htng"]
-[ext_resource type="Script" uid="uid://dvnh4t3pe6bcp" path="res://CharacterMove.gd" id="6_8pcqq"]
+[ext_resource type="Script" uid="uid://dvnh4t3pe6bcp" path="res://script/CharacterMove.gd" id="6_8pcqq"]
 [ext_resource type="Texture2D" uid="uid://du6bg0becobby" path="res://sprite/Characters/Basic Charakter Spritesheet.png" id="7_ppq2u"]
-[ext_resource type="Script" uid="uid://bmmxgerinmbuq" path="res://ChickenMove.gd" id="10_nx0vn"]
+[ext_resource type="Script" uid="uid://bmmxgerinmbuq" path="res://script/ChickenMove.gd" id="10_nx0vn"]
 [ext_resource type="Texture2D" uid="uid://bs86maafv4tp5" path="res://sprite/Characters/Free Chicken Sprites.png" id="11_76767"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_stj1f"]
@@ -494,8 +494,7 @@ tile_set = SubResource("TileSet_lix3n")
 y_sort_enabled = true
 
 [node name="Player" type="CharacterBody2D" parent="Characters" unique_id=1567147848]
-visible = false
-position = Vector2(88, 440)
+position = Vector2(48, 392)
 script = ExtResource("6_8pcqq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Characters/Player" unique_id=1533075399]
