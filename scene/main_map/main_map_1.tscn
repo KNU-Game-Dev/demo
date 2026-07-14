@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_h4dfm"]
 [ext_resource type="Texture2D" uid="uid://du6bg0becobby" path="res://sprite/Characters/Basic Charakter Spritesheet.png" id="1_lbsit"]
-[ext_resource type="Script" uid="uid://dvnh4t3pe6bcp" path="res://script/CharacterMove.gd" id="1_t14c6"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_0tdgn"]
 [ext_resource type="Texture2D" uid="uid://cq4uo5mnl77yd" path="res://sprite/Objects/Chest.png" id="3_q7hxo"]
+[ext_resource type="Script" uid="uid://dfnmi30txk5gh" path="res://script/player/player.gd" id="3_ql76o"]
 [ext_resource type="Script" uid="uid://jqg82w4dj82p" path="res://script/BoxEntered.gd" id="3_qs6e5"]
 [ext_resource type="Script" uid="uid://bvde4lc4v4he2" path="res://SubMap1Game.gd" id="5_1bbij"]
 [ext_resource type="Script" uid="uid://bolyxhe0d7hfm" path="res://script/BoxOpen2.gd" id="5_dxwoj"]
+[ext_resource type="Script" uid="uid://bwldpo1uku5sb" path="res://script/player/movement_component.gd" id="5_py14q"]
+[ext_resource type="Script" uid="uid://bkujgr8477nds" path="res://script/player/health_component.gd" id="6_7lvwt"]
+[ext_resource type="Script" uid="uid://dnb8xupllsxb7" path="res://script/player/attack_component.gd" id="7_7lvwt"]
+[ext_resource type="Script" uid="uid://boqowh8u716t0" path="res://script/player/inventory_component.gd" id="7_pet52"]
 [ext_resource type="PackedScene" uid="uid://dpv438rv6yg8k" path="res://scene/menu/game_menu.tscn" id="9_ql76o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxwoj"]
@@ -481,7 +485,7 @@ tile_set = SubResource("TileSet_061pf")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Player" unique_id=417876544]
 position = Vector2(320, 248.00002)
-script = ExtResource("1_t14c6")
+script = ExtResource("3_ql76o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody2D" unique_id=433467271]
 position = Vector2(-1.5258789e-05, 0)
@@ -496,6 +500,35 @@ shape = SubResource("CapsuleShape2D_0tdgn")
 [node name="Camera2D" type="Camera2D" parent="Player/CharacterBody2D" unique_id=1492549506]
 visible = false
 zoom = Vector2(1.5, 1.5)
+
+[node name="StateMachine" type="Node2D" parent="Player/CharacterBody2D" unique_id=1269784164]
+visible = false
+
+[node name="DepressiveState" type="Node2D" parent="Player/CharacterBody2D/StateMachine" unique_id=1093254420]
+
+[node name="AnxietyState" type="Node2D" parent="Player/CharacterBody2D/StateMachine" unique_id=1174289106]
+
+[node name="DisruptiveState" type="Node2D" parent="Player/CharacterBody2D/StateMachine" unique_id=1414769324]
+
+[node name="NeurodevelopmentalState" type="Node2D" parent="Player/CharacterBody2D/StateMachine" unique_id=333816300]
+
+[node name="MovementComponent" type="Node2D" parent="Player/CharacterBody2D" unique_id=23581192]
+script = ExtResource("5_py14q")
+
+[node name="HealthComponent" type="Node2D" parent="Player/CharacterBody2D" unique_id=19613002]
+visible = false
+script = ExtResource("6_7lvwt")
+
+[node name="AttackComponent" type="Node2D" parent="Player/CharacterBody2D" unique_id=1935196213]
+visible = false
+script = ExtResource("7_7lvwt")
+
+[node name="InventoryComponent" type="Node2D" parent="Player/CharacterBody2D" unique_id=1101480968]
+visible = false
+script = ExtResource("7_pet52")
+
+[node name="SoundComponent" type="AudioStreamPlayer2D" parent="Player/CharacterBody2D" unique_id=1553707155]
+visible = false
 
 [node name="Gate" type="Node2D" parent="." unique_id=1133864055]
 
