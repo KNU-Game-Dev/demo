@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d2ww1ni5erygo"]
+
+[ext_resource type="PackedScene" uid="uid://5sgy0k2htp7b" path="res://player.tscn" id="1_qnm86"]
+
+[node name="WorldA" type="Node2D" unique_id=2086431960]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=790889492]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1066255171]
+color = Color(0.5882353, 0.7058824, 1, 1)
+
+[node name="Player" parent="." unique_id=1152814004 instance=ExtResource("1_qnm86")]
