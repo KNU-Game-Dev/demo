@@ -3,6 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_m3nl2"]
 [ext_resource type="Texture2D" uid="uid://dxhyywhcjrx3j" path="res://scene/theater_light.png" id="1_rad28"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_rad28"]
+[ext_resource type="Texture2D" uid="uid://bvpfl2his7t6h" path="res://sprite/Objects/balloon.png" id="4_m3nl2"]
+[ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_rad28"]
+[ext_resource type="Script" uid="uid://cu53n3t3tu3" path="res://fliker.gd" id="6_gqi2h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("1_m3nl2")
@@ -185,10 +188,32 @@ texture = ExtResource("2_rad28")
 [sub_resource type="TileSet" id="TileSet_8hdlm"]
 sources/0 = SubResource("TileSetAtlasSource_81rgy")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rad28"]
+atlas = ExtResource("4_m3nl2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhbl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rad28")
+}],
+"loop": 1,
+"name": &"orign",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sa1l"]
+size = Vector2(12, 24)
+
 [node name="MainMap2" type="Node2D" unique_id=1100958087]
+position = Vector2(-13, -35)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1986595805]
+color = Color(0.10438374, 0.10438374, 0.10438374, 1)
 
 [node name="background" type="Sprite2D" parent="." unique_id=1500963695]
-position = Vector2(583.00006, 327)
+position = Vector2(588, 367)
 scale = Vector2(0.5932292, 0.587037)
 texture = ExtResource("1_rad28")
 
@@ -213,3 +238,25 @@ scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_8hdlm")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=217780496]
+
+[node name="balloon2D" type="CharacterBody2D" parent="Node2D" unique_id=809617603]
+position = Vector2(33, 86)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/balloon2D" unique_id=319071337]
+position = Vector2(582, 262)
+scale = Vector2(3.4218738, 3.375)
+sprite_frames = SubResource("SpriteFrames_yhbl5")
+animation = &"orign"
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/balloon2D" unique_id=2116107032]
+position = Vector2(578.5, 290)
+scale = Vector2(0.37792966, 0.4845543)
+texture = ExtResource("5_rad28")
+
+[node name="fliker" type="AnimationPlayer" parent="Node2D/balloon2D/PointLight2D" unique_id=1649405136]
+speed_scale = 0.398
+script = ExtResource("6_gqi2h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/balloon2D" unique_id=1329586140]
+position = Vector2(578, 320)
+shape = SubResource("RectangleShape2D_6sa1l")
