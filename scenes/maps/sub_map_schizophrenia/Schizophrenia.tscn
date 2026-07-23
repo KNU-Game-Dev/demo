@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c716mjg3b6nok"]
+
+[ext_resource type="Script" uid="uid://b2l1wjxwy26iw" path="res://scripts/world/sub_map_schizophrenia/Schizophrenia.gd" id="1_3h4dx"]
+[ext_resource type="PackedScene" uid="uid://d2ww1ni5erygo" path="res://scenes/maps/sub_map_schizophrenia/world_a.tscn" id="1_5lbje"]
+[ext_resource type="PackedScene" uid="uid://ben6cj06ifnv8" path="res://scenes/maps/sub_map_schizophrenia/world_b.tscn" id="2_taqpb"]
+
+[node name="Schizophrenia" type="Node2D" unique_id=940539627]
+script = ExtResource("1_3h4dx")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1299927443]
+
+[node name="ContainerA" type="SubViewportContainer" parent="UILayer" unique_id=445288276]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ViewportA" type="SubViewport" parent="UILayer/ContainerA" unique_id=1760675533]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="WorldA" parent="UILayer/ContainerA/ViewportA" unique_id=2086431960 instance=ExtResource("1_5lbje")]
+
+[node name="ContainerB" type="SubViewportContainer" parent="UILayer" unique_id=1957384533]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ViewportB" type="SubViewport" parent="UILayer/ContainerB" unique_id=660498396]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="WorldB" parent="UILayer/ContainerB/ViewportB" unique_id=1331035748 instance=ExtResource("2_taqpb")]
