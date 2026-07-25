@@ -1,0 +1,269 @@
+[gd_scene format=3 uid="uid://kpfq2y8fvcgi"]
+
+[ext_resource type="Texture2D" uid="uid://dxhyywhcjrx3j" path="res://scene/theater_light.png" id="1_hpv7h"]
+[ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="2_r4sai"]
+[ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="3_0d1nl"]
+[ext_resource type="Texture2D" uid="uid://bu0l5u1nyccdm" path="res://sprite/Objects/풍선 이미지.png" id="4_hpv7h"]
+[ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_1jtbm"]
+[ext_resource type="Script" uid="uid://cu53n3t3tu3" path="res://fliker.gd" id="6_amutu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
+texture = ExtResource("2_r4sai")
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_81rgy"]
+sources/0 = SubResource("TileSetAtlasSource_6so1g")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6fc8"]
+texture = ExtResource("2_r4sai")
+1:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.8934746, -8, 3.1233158, 8, 8, 8, 8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.856185, -8, -4.856185)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.6978817, -8, -2.6978817, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.3273888, -8, 3.3273888, 8, 8, 8, 8, -8)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.877739, -8, -2.6978817, 8, -8, 8)
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.877739, -8, 3.2374573, 8, 8, 8, 8, -8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -2.9676666, -8, -2.7878075, 8, -8, 8)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_tmve1"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_b6fc8")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obtu4"]
+texture = ExtResource("3_0d1nl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 1.7985878, 8, 1.978447, 8, 8)
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.991639, -8, -6.877022, 8, 6.991639, 8, 6.93433, -8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -3.2374563, 8, -3.4173155, 8, -8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.036044, -6.2950544, -4.856186, 5.5756207, 5.036045, 5.935339, 4.6763268, -6.2950544)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.036044, -6.4749136, -5.036044, 6.115198, 5.2159023, 6.115198, 5.036045, -6.4749136)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.036044, -8, -5.036044, 5.3957634, 3.956892, 5.75548, 4.856186, -8)
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.8483667, -6.991639, -6.962984, 7.1635647, 7.0776024, 7.0489473, 7.1922207, -7.0489473)
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8dqpd"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_obtu4")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_81rgy"]
+texture = ExtResource("3_0d1nl")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8hdlm"]
+sources/0 = SubResource("TileSetAtlasSource_81rgy")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4sai"]
+atlas = ExtResource("4_hpv7h")
+region = Rect2(0, 0, 256, 223)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d1nl"]
+atlas = ExtResource("4_hpv7h")
+region = Rect2(0, 223, 256, 223)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhbl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4sai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d1nl")
+}],
+"loop": 1,
+"name": &"orign",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sa1l"]
+size = Vector2(12, 24)
+
+[node name="MainMap2" type="Node2D" unique_id=1100958087]
+position = Vector2(-13, -35)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1986595805]
+color = Color(0.10438374, 0.10438374, 0.10438374, 1)
+
+[node name="background" type="Sprite2D" parent="." unique_id=1500963695]
+position = Vector2(588, 367)
+scale = Vector2(0.5932292, 0.587037)
+texture = ExtResource("1_hpv7h")
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=539620994]
+position = Vector2(-32, 0)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_81rgy")
+
+[node name="Wall" type="TileMapLayer" parent="." unique_id=1485082190]
+position = Vector2(-32, 0)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_tmve1")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=93802864]
+position = Vector2(16, -32)
+scale = Vector2(4, 4)
+tile_set = SubResource("TileSet_8dqpd")
+
+[node name="WallDecoration" type="TileMapLayer" parent="." unique_id=509471307]
+position = Vector2(-32, 0)
+scale = Vector2(3, 3)
+tile_set = SubResource("TileSet_8hdlm")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=217780496]
+
+[node name="balloon2D" type="CharacterBody2D" parent="Node2D" unique_id=809617603]
+position = Vector2(33, 86)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/balloon2D" unique_id=319071337]
+position = Vector2(552.9359, 279.08234)
+scale = Vector2(0.79737574, 1.1203377)
+sprite_frames = SubResource("SpriteFrames_yhbl5")
+animation = &"orign"
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D/balloon2D" unique_id=2116107032]
+position = Vector2(565.00006, 337.00003)
+scale = Vector2(0.48435977, 0.5401684)
+texture = ExtResource("5_1jtbm")
+
+[node name="fliker" type="AnimationPlayer" parent="Node2D/balloon2D/PointLight2D" unique_id=1649405136]
+speed_scale = 0.398
+script = ExtResource("6_amutu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/balloon2D" unique_id=1329586140]
+position = Vector2(588, 400)
+shape = SubResource("RectangleShape2D_6sa1l")
