@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://khmdw1j5e6cd"]
 
+<<<<<<< HEAD
 <<<<<<< HEAD:scene/main_map/main_map_1.tscn
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_h4dfm"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_0tdgn"]
@@ -10,6 +11,8 @@
 [ext_resource type="Script" uid="uid://bolyxhe0d7hfm" path="res://script/BoxOpen2.gd" id="5_dxwoj"]
 [ext_resource type="PackedScene" uid="uid://dpv438rv6yg8k" path="res://scene/menu/game_menu.tscn" id="9_ql76o"]
 =======
+=======
+>>>>>>> origin/main
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://assets/sprites/tilesets/Wooden House.png" id="1_h4dfm"]
 [ext_resource type="Texture2D" uid="uid://du6bg0becobby" path="res://assets/sprites/characters/Basic Charakter Spritesheet.png" id="1_lbsit"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://assets/sprites/objects/Basic_Furniture.png" id="2_0tdgn"]
@@ -23,7 +26,10 @@
 [ext_resource type="Script" uid="uid://dnb8xupllsxb7" path="res://scripts/player/attack_component.gd" id="7_7lvwt"]
 [ext_resource type="Script" uid="uid://boqowh8u716t0" path="res://scripts/player/inventory_component.gd" id="7_pet52"]
 [ext_resource type="PackedScene" uid="uid://dpv438rv6yg8k" path="res://scenes/menu/game_menu.tscn" id="9_ql76o"]
+<<<<<<< HEAD
 >>>>>>> main:scenes/maps/main_map_1.tscn
+=======
+>>>>>>> origin/main
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dxwoj"]
 texture = ExtResource("1_h4dfm")
