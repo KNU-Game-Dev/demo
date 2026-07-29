@@ -2,12 +2,19 @@
 extends Node2D
 
 enum ViewMode { A_ONLY, B_ONLY, BOTH }
-var current_mode = ViewMode.BOTH
+var current_mode = ViewMode.A_ONLY
+var can_toggle = false  # 처음엔 비활성화
+@onready var dialogue_label = $UILayer/CanvasLayer/TextureRect/Label
 
-@onready var container_a = $UILayer/ContainerA
-@onready var container_b = $UILayer/ContainerB
-@onready var player_a = $UILayer/ContainerA/ViewportA/WorldA/Player
-@onready var player_b = $UILayer/ContainerB/ViewportB/WorldB/Player
+func _ready():
+	set_view_mode(ViewMode.A_ONLY)
+	
+#변수창 인스펙터에서
+@export var container_a: Control
+@export var container_b: Control
+@export var player_a: Node
+@export var player_b: Node
+
 # 시점 변경
 func set_view_mode(mode: ViewMode):
 	current_mode = mode
@@ -32,9 +39,9 @@ func set_view_mode(mode: ViewMode):
 			_set_player_active(player_a, true)
 			_set_player_active(player_b, true)
 	_update_dialogue(mode)
-	
+
 func _input(event):
-	if event.is_action_pressed("toggle_view"):
+	if can_toggle and event.is_action_pressed("toggle_view"): #토글뷰 액션이 눌렸을때-'R키'
 		_cycle_view_mode()
 
 func _cycle_view_mode():
@@ -54,8 +61,8 @@ func _set_player_active(player: Node, active: bool):
 func _update_dialogue(mode: ViewMode):
 	match mode:
 		ViewMode.A_ONLY:
-			print("A월드 토글")  
+			dialogue_label.text = "현재 상태 : \"너\""
 		ViewMode.B_ONLY:
-			print("B월드 토글")
+			dialogue_label.text = "현재 상태 : \"나\""
 		ViewMode.BOTH:
-			print("C월드 토글")
+			dialogue_label.text = "현재 상태 : \"우리\""

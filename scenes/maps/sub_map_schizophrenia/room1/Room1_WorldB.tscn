@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b7gyhbt8jhbh7"]
+
+[ext_resource type="PackedScene" uid="uid://5sgy0k2htp7b" path="res://player.tscn" id="1_cg6ol"]
+[ext_resource type="TileSet" uid="uid://byak5wm8m5tu6" path="res://scenes/maps/sub_map_schizophrenia/WoodenHouse.tres" id="2_pfvbt"]
+[ext_resource type="Script" uid="uid://cqi0nfkbht6if" path="res://scripts/world/sub_map_schizophrenia/FixedCamera.gd" id="3_hqhrn"]
+
+[node name="Room1WorldB_tscn" type="Node2D" unique_id=214618111]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1970066052]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1005230091]
+color = Color(1, 0.74509805, 0.54901963, 1)
+
+[node name="Player" parent="." unique_id=1152814004 instance=ExtResource("1_cg6ol")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1541679768]
+tile_set = ExtResource("2_pfvbt")
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=523047103]
+scale = Vector2(3, 3)
+tile_set = ExtResource("2_pfvbt")
+
+[node name="Wall" type="TileMapLayer" parent="." unique_id=974765664]
+scale = Vector2(3, 3)
+tile_set = ExtResource("2_pfvbt")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=369257235]
+position = Vector2(576, 324)
+script = ExtResource("3_hqhrn")
