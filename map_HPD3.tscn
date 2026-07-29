@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bu0l5u1nyccdm" path="res://sprite/Objects/풍선 이미지.png" id="4_hpv7h"]
 [ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_1jtbm"]
 [ext_resource type="Script" uid="uid://cu53n3t3tu3" path="res://fliker.gd" id="6_amutu"]
+[ext_resource type="Texture2D" uid="uid://ftyl8e5vylcp" path="res://sprite/Objects/눈.png" id="7_r4sai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("2_r4sai")
@@ -213,11 +214,76 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6sa1l"]
 size = Vector2(12, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_558tm"]
+atlas = ExtResource("7_r4sai")
+region = Rect2(0, 209, 209, 209)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6sa1l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_558tm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jtbm"]
+atlas = ExtResource("7_r4sai")
+region = Rect2(418, 358, 209, 179)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00hr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jtbm")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amutu"]
+atlas = ExtResource("7_r4sai")
+region = Rect2(0, 695, 209, 139)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsxls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amutu")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pjm4"]
+atlas = ExtResource("7_r4sai")
+region = Rect2(209, 695, 209, 139)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_chkor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pjm4")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMap2" type="Node2D" unique_id=1100958087]
 position = Vector2(-13, -35)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1986595805]
-color = Color(0.10438374, 0.10438374, 0.10438374, 1)
+color = Color(0.67275155, 0.67275155, 0.6727515, 1)
 
 [node name="background" type="Sprite2D" parent="." unique_id=1500963695]
 position = Vector2(588, 367)
@@ -267,3 +333,27 @@ script = ExtResource("6_amutu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/balloon2D" unique_id=1329586140]
 position = Vector2(588, 400)
 shape = SubResource("RectangleShape2D_6sa1l")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2041900694]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1528223284]
+position = Vector2(186, 237)
+sprite_frames = SubResource("SpriteFrames_6sa1l")
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=768655802]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2" unique_id=1275006760]
+position = Vector2(848, 201)
+sprite_frames = SubResource("SpriteFrames_00hr3")
+
+[node name="CharacterBody2D3" type="CharacterBody2D" parent="." unique_id=2114461885]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D3" unique_id=297533966]
+position = Vector2(208, 500)
+sprite_frames = SubResource("SpriteFrames_rsxls")
+
+[node name="CharacterBody2D4" type="CharacterBody2D" parent="." unique_id=1035056245]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D4" unique_id=1391653270]
+position = Vector2(979, 373)
+sprite_frames = SubResource("SpriteFrames_chkor")
