@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_1jtbm"]
 [ext_resource type="Script" uid="uid://cu53n3t3tu3" path="res://fliker.gd" id="6_amutu"]
 [ext_resource type="Texture2D" uid="uid://ftyl8e5vylcp" path="res://sprite/Objects/눈.png" id="7_r4sai"]
+[ext_resource type="Texture2D" uid="uid://hoim478bflnw" path="res://sprite/Objects/눈2 (2).png" id="8_0d1nl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("2_r4sai")
@@ -279,6 +280,66 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo5x8"]
+atlas = ExtResource("7_r4sai")
+region = Rect2(418, 104, 209, 104)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qbeb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo5x8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugnht"]
+atlas = ExtResource("8_0d1nl")
+region = Rect2(384, 118, 128, 118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b7q1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ugnht")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcogq"]
+atlas = ExtResource("8_0d1nl")
+region = Rect2(226, 944, 113, 118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl652"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcogq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xsv7"]
+atlas = ExtResource("8_0d1nl")
+region = Rect2(0, 118, 204, 118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tfedq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xsv7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMap2" type="Node2D" unique_id=1100958087]
 position = Vector2(-13, -35)
 
@@ -286,7 +347,7 @@ position = Vector2(-13, -35)
 color = Color(0.67275155, 0.67275155, 0.6727515, 1)
 
 [node name="background" type="Sprite2D" parent="." unique_id=1500963695]
-position = Vector2(588, 367)
+position = Vector2(599, 367)
 scale = Vector2(0.5932292, 0.587037)
 texture = ExtResource("1_hpv7h")
 
@@ -322,7 +383,7 @@ sprite_frames = SubResource("SpriteFrames_yhbl5")
 animation = &"orign"
 
 [node name="PointLight2D" type="PointLight2D" parent="Node2D/balloon2D" unique_id=2116107032]
-position = Vector2(565.00006, 337.00003)
+position = Vector2(571, 340)
 scale = Vector2(0.48435977, 0.5401684)
 texture = ExtResource("5_1jtbm")
 
@@ -337,23 +398,53 @@ shape = SubResource("RectangleShape2D_6sa1l")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2041900694]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1528223284]
-position = Vector2(186, 237)
+position = Vector2(973.37506, 263.875)
+scale = Vector2(1.7069383, 1.5035884)
 sprite_frames = SubResource("SpriteFrames_6sa1l")
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="." unique_id=768655802]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D2" unique_id=1275006760]
-position = Vector2(848, 201)
+position = Vector2(78, 358)
+scale = Vector2(1.1758373, 1.1382682)
 sprite_frames = SubResource("SpriteFrames_00hr3")
 
 [node name="CharacterBody2D3" type="CharacterBody2D" parent="." unique_id=2114461885]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D3" unique_id=297533966]
-position = Vector2(208, 500)
+position = Vector2(870, 554.00006)
+scale = Vector2(1.34689, 1.2194245)
 sprite_frames = SubResource("SpriteFrames_rsxls")
 
 [node name="CharacterBody2D4" type="CharacterBody2D" parent="." unique_id=1035056245]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D4" unique_id=1391653270]
-position = Vector2(979, 373)
+position = Vector2(965, 474)
 sprite_frames = SubResource("SpriteFrames_chkor")
+
+[node name="CharacterBody2D5" type="CharacterBody2D" parent="." unique_id=152166139]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D5" unique_id=1775000978]
+position = Vector2(206.99998, 594.00006)
+scale = Vector2(1.2799044, 1.4038461)
+sprite_frames = SubResource("SpriteFrames_qbeb8")
+
+[node name="CharacterBody2D6" type="CharacterBody2D" parent="." unique_id=1421503477]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D6" unique_id=1340223217]
+position = Vector2(820, 197)
+scale = Vector2(1.3417971, 1.2097458)
+sprite_frames = SubResource("SpriteFrames_b7q1d")
+
+[node name="CharacterBody2D7" type="CharacterBody2D" parent="." unique_id=1597010546]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D7" unique_id=618108716]
+position = Vector2(228, 208)
+scale = Vector2(1.2721244, 1.5127119)
+sprite_frames = SubResource("SpriteFrames_rl652")
+
+[node name="CharacterBody2D8" type="CharacterBody2D" parent="." unique_id=1616932188]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D8" unique_id=1699233941]
+position = Vector2(476, 195)
+sprite_frames = SubResource("SpriteFrames_tfedq")
