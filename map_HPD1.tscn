@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_nccct"]
 [ext_resource type="Script" uid="uid://bccve60gh6x3p" path="res://enemy.gd" id="3_0fai7"]
 [ext_resource type="Texture2D" uid="uid://d325qc0kx0cqu" path="res://sprite/Objects/milk.png" id="3_2rtto"]
+[ext_resource type="Texture2D" uid="uid://1puikxbrklm8" path="res://sprite/Objects/우유 몬스터.png" id="5_qvrpv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("1_cvdvn")
@@ -190,6 +191,10 @@ sources/0 = SubResource("TileSetAtlasSource_81rgy")
 atlas = ExtResource("3_2rtto")
 region = Rect2(32, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6yc8"]
+atlas = ExtResource("5_qvrpv")
+region = Rect2(418, 418, 418, 418)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0fai7"]
 atlas = ExtResource("3_2rtto")
 region = Rect2(0, 0, 32, 32)
@@ -201,7 +206,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_2rtto")
 }],
 "loop": 1,
-"name": &"HP 1_2",
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6yc8")
+}],
+"loop": 1,
+"name": &"dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -209,7 +222,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_0fai7")
 }],
 "loop": 1,
-"name": &"orign",
+"name": &"normal",
 "speed": 5.0
 }]
 
@@ -248,13 +261,15 @@ tile_set = SubResource("TileSet_8hdlm")
 script = ExtResource("3_0fai7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Milk2D" unique_id=1500571583]
-position = Vector2(124.00006, 340)
-scale = Vector2(1.59375, 1.8125)
+position = Vector2(403, 346)
+scale = Vector2(0.38618916, 0.3982755)
 sprite_frames = SubResource("SpriteFrames_rsxls")
-animation = &"orign"
+animation = &"dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Milk2D" unique_id=1270349294]
 position = Vector2(124, 346.5)
 shape = SubResource("RectangleShape2D_0fai7")
 
 [node name="Timer" type="Timer" parent="Node2D/Milk2D" unique_id=2125103379]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Milk2D" unique_id=738462281]
