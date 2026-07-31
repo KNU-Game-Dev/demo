@@ -1,10 +1,10 @@
-[gd_scene format=3 uid="uid://b2xy3jnm64s7w"]
+[gd_scene format=3 uid="uid://qcy5hf55iywc"]
 
-[ext_resource type="Script" uid="uid://b2l1wjxwy26iw" path="res://scripts/world/sub_map_schizophrenia/Schizophrenia.gd" id="1_cq0nx"]
-[ext_resource type="PackedScene" uid="uid://bmtt5ybj13v1f" path="res://scenes/maps/sub_map_schizophrenia/room1/Room1_WorldA.tscn" id="1_eduxq"]
-[ext_resource type="PackedScene" uid="uid://b7gyhbt8jhbh7" path="res://scenes/maps/sub_map_schizophrenia/room1/Room1_WorldB.tscn" id="2_cq0nx"]
-[ext_resource type="Texture2D" uid="uid://clnefnibfv03v" path="res://scenes/maps/sub_map_schizophrenia/Container.png" id="4_nycsw"]
-[ext_resource type="FontFile" uid="uid://b5jteyy6gj4kn" path="res://fonts/BoldPixels.ttf" id="5_3ogrk"]
+[ext_resource type="Script" uid="uid://b2l1wjxwy26iw" path="res://scripts/world/sub_map_schizophrenia/Schizophrenia.gd" id="1_ogs6i"]
+[ext_resource type="PackedScene" uid="uid://v3y8u1sf6mb6" path="res://scenes/maps/sub_map_schizophrenia/room2/Room2_WorldA.tscn" id="2_xgpmf"]
+[ext_resource type="PackedScene" uid="uid://vnnqpkt47pj0" path="res://scenes/maps/sub_map_schizophrenia/room2/Room2_WorldB.tscn" id="3_xs6dm"]
+[ext_resource type="Texture2D" uid="uid://clnefnibfv03v" path="res://scenes/maps/sub_map_schizophrenia/Container.png" id="4_im18x"]
+[ext_resource type="FontFile" uid="uid://b5jteyy6gj4kn" path="res://fonts/BoldPixels.ttf" id="5_xyj8u"]
 
 [sub_resource type="Animation" id="Animation_nycsw"]
 length = 0.001
@@ -36,18 +36,18 @@ tracks/0/keys = {
 "values": [Vector2(822, -143.455), Vector2(822, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sdvgo"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgpmf"]
 _data = {
 &"RESET": SubResource("Animation_nycsw"),
 &"slide_down": SubResource("Animation_3ogrk")
 }
 
-[node name="Room1_tscn" type="Node2D" unique_id=904815301 node_paths=PackedStringArray("container_a", "container_b", "player_a", "player_b")]
-script = ExtResource("1_cq0nx")
+[node name="Room2_tscn" type="Node2D" unique_id=904815301 node_paths=PackedStringArray("container_a", "container_b", "player_a", "player_b")]
+script = ExtResource("1_ogs6i")
 container_a = NodePath("UILayer/ContainerA")
 container_b = NodePath("UILayer/ContainerB")
-player_a = NodePath("UILayer/ContainerA/ViewportA/Room1WorldA_tscn/Player")
-player_b = NodePath("UILayer/ContainerB/ViewportB/Room1WorldB_tscn/Player")
+player_a = NodePath("UILayer/ContainerA/ViewportA/Room2WorldA_tscn/Player")
+player_b = NodePath("UILayer/ContainerA/ViewportA/Room2WorldA_tscn/Player")
 
 [node name="UILayer" type="CanvasLayer" parent="." unique_id=1964447968]
 
@@ -67,7 +67,8 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Room1WorldA_tscn" parent="UILayer/ContainerA/ViewportA" unique_id=1782012340 instance=ExtResource("1_eduxq")]
+[node name="Room2WorldA_tscn" parent="UILayer/ContainerA/ViewportA" unique_id=1782012340 instance=ExtResource("2_xgpmf")]
+position = Vector2(130.00635, -27.142078)
 
 [node name="ContainerB" type="SubViewportContainer" parent="UILayer" unique_id=1052079339]
 modulate = Color(1, 1, 1, 0.6)
@@ -86,35 +87,32 @@ canvas_item_default_texture_filter = 0
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
-[node name="Room1WorldB_tscn" parent="UILayer/ContainerB/ViewportB" unique_id=214618111 instance=ExtResource("2_cq0nx")]
+[node name="Room2WorldB_tscn" parent="UILayer/ContainerB/ViewportB" unique_id=214618111 instance=ExtResource("3_xs6dm")]
 
-[node name="Area2D" parent="UILayer/ContainerB/ViewportB/Room1WorldB_tscn" index="8" unique_id=891769893]
-next_scene = "res://scenes/maps/sub_map_schizophrenia/room2/Room2.tscn"
+[node name="CanvasLayer2" type="CanvasLayer" parent="UILayer" unique_id=2059659908]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="UILayer" unique_id=644721150]
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/CanvasLayer" unique_id=106167866]
+[node name="TextureRect" type="TextureRect" parent="UILayer/CanvasLayer2" unique_id=654326929]
 offset_left = 826.0
 offset_top = -143.0
 offset_right = 1136.0
 offset_bottom = -9.0
-texture = ExtResource("4_nycsw")
+texture = ExtResource("4_im18x")
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="UILayer/CanvasLayer/TextureRect" unique_id=570293126]
+[node name="Label" type="Label" parent="UILayer/CanvasLayer2/TextureRect" unique_id=162377810]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 45.455
 offset_right = 386.0
 offset_bottom = 120.455
-theme_override_fonts/font = ExtResource("5_3ogrk")
+theme_override_fonts/font = ExtResource("5_xyj8u")
 theme_override_font_sizes/font_size = 25
 text = "R 키를 눌러 \"나\"와
  대화하시오."
 metadata/_edit_use_anchors_ = true
 
-[node name="slide_down" type="AnimationPlayer" parent="UILayer/CanvasLayer/TextureRect" unique_id=728073030]
-libraries/ = SubResource("AnimationLibrary_sdvgo")
+[node name="slide_down" type="AnimationPlayer" parent="UILayer/CanvasLayer2/TextureRect" unique_id=552627013]
+libraries/ = SubResource("AnimationLibrary_xgpmf")
 
-[editable path="UILayer/ContainerA/ViewportA/Room1WorldA_tscn"]
-[editable path="UILayer/ContainerB/ViewportB/Room1WorldB_tscn"]
+[editable path="UILayer/ContainerA/ViewportA/Room2WorldA_tscn"]
+[editable path="UILayer/ContainerB/ViewportB/Room2WorldB_tscn"]

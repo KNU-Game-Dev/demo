@@ -14,6 +14,10 @@ config/name="game"
 run/main_scene="uid://khmdw1j5e6cd"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+GameState="*uid://gxlm42cbqief"
+
 [display]
 
 window/stretch/mode="canvas_items"

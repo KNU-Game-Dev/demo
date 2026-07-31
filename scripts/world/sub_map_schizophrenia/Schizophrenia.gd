@@ -41,7 +41,7 @@ func set_view_mode(mode: ViewMode):
 	_update_dialogue(mode)
 
 func _input(event):
-	if can_toggle and event.is_action_pressed("toggle_view"): #토글뷰 액션이 눌렸을때-'R키'
+	if  GameState.can_toggle and event.is_action_pressed("toggle_view"): #토글뷰 액션이 눌렸을때-'R키'
 		_cycle_view_mode()
 
 func _cycle_view_mode():

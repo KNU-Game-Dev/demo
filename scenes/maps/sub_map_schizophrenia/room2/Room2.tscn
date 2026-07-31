@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://qcy5hf55iywc"]
+
+[ext_resource type="Script" uid="uid://b2l1wjxwy26iw" path="res://scripts/world/sub_map_schizophrenia/Schizophrenia.gd" id="1_ogs6i"]
+[ext_resource type="PackedScene" uid="uid://v3y8u1sf6mb6" path="res://scenes/maps/sub_map_schizophrenia/room2/Room2_WorldA.tscn" id="2_xgpmf"]
+[ext_resource type="PackedScene" uid="uid://vnnqpkt47pj0" path="res://scenes/maps/sub_map_schizophrenia/room2/Room2_WorldB.tscn" id="3_xs6dm"]
+[ext_resource type="Texture2D" uid="uid://clnefnibfv03v" path="res://scenes/maps/sub_map_schizophrenia/Container.png" id="4_im18x"]
+[ext_resource type="FontFile" uid="uid://b5jteyy6gj4kn" path="res://fonts/BoldPixels.ttf" id="5_xyj8u"]
+
+[sub_resource type="Animation" id="Animation_nycsw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(826, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3ogrk"]
+resource_name = "slide_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(2.9281712, 3.999999),
+"update": 0,
+"values": [Vector2(822, -143.455), Vector2(822, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xgpmf"]
+_data = {
+&"RESET": SubResource("Animation_nycsw"),
+&"slide_down": SubResource("Animation_3ogrk")
+}
+
+[node name="Room2_tscn" type="Node2D" unique_id=904815301 node_paths=PackedStringArray("container_a", "container_b", "player_a", "player_b")]
+script = ExtResource("1_ogs6i")
+container_a = NodePath("UILayer/ContainerA")
+container_b = NodePath("UILayer/ContainerB")
+player_a = NodePath("UILayer/ContainerA/ViewportA/Room2WorldA_tscn/Player")
+player_b = NodePath("UILayer/ContainerB/ViewportB/Room2WorldB_tscn/Player")
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1964447968]
+
+[node name="ContainerA" type="SubViewportContainer" parent="UILayer" unique_id=1873999621]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ViewportA" type="SubViewport" parent="UILayer/ContainerA" unique_id=547738394]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Room2WorldA_tscn" parent="UILayer/ContainerA/ViewportA" unique_id=1782012340 instance=ExtResource("2_xgpmf")]
+position = Vector2(130.00635, -27.142078)
+
+[node name="ColorRect" parent="UILayer/ContainerA/ViewportA/Room2WorldA_tscn" index="0" unique_id=91685856]
+offset_left = -130.00635
+offset_top = 19.142078
+offset_right = 1021.99365
+offset_bottom = 667.1421
+
+[node name="Player" parent="UILayer/ContainerA/ViewportA/Room2WorldA_tscn" index="2" unique_id=1152814004]
+position = Vector2(125.99365, 275.1421)
+
+[node name="Camera2D" parent="UILayer/ContainerA/ViewportA/Room2WorldA_tscn" index="3" unique_id=1694680636]
+position = Vector2(445.99365, 347.1421)
+
+[node name="Wall" parent="UILayer/ContainerA/ViewportA/Room2WorldA_tscn" index="4" unique_id=1349213171]
+position = Vector2(-138.00635, 3.1420784)
+
+[node name="Object" parent="UILayer/ContainerA/ViewportA/Room2WorldA_tscn" index="5" unique_id=1362566382]
+position = Vector2(-138.00635, 11.142078)
+
+[node name="Floor" parent="UILayer/ContainerA/ViewportA/Room2WorldA_tscn" index="6" unique_id=1138699816]
+position = Vector2(-90.00635, 3.1420784)
+
+[node name="ContainerB" type="SubViewportContainer" parent="UILayer" unique_id=1052079339]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+metadata/_edit_use_anchors_ = true
+
+[node name="ViewportB" type="SubViewport" parent="UILayer/ContainerB" unique_id=649438534]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Room2WorldB_tscn" parent="UILayer/ContainerB/ViewportB" unique_id=214618111 instance=ExtResource("3_xs6dm")]
+
+[node name="ColorRect" parent="UILayer/ContainerB/ViewportB/Room2WorldB_tscn" index="0" unique_id=1970066052]
+offset_bottom = 640.0
+
+[node name="Camera2D" parent="UILayer/ContainerB/ViewportB/Room2WorldB_tscn" index="3" unique_id=369257235]
+position = Vector2(576, 320)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UILayer" unique_id=2059659908]
+
+[node name="TextureRect" type="TextureRect" parent="UILayer/CanvasLayer" unique_id=654326929]
+offset_left = 826.0
+offset_right = 1136.0
+offset_bottom = 134.0
+texture = ExtResource("4_im18x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="UILayer/CanvasLayer/TextureRect" unique_id=162377810]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 45.455
+offset_right = 386.0
+offset_bottom = 120.455
+theme_override_fonts/font = ExtResource("5_xyj8u")
+theme_override_font_sizes/font_size = 25
+text = "R 키를 눌러 \"나\"와
+ 대화하시오."
+metadata/_edit_use_anchors_ = true
+
+[node name="slide_down" type="AnimationPlayer" parent="UILayer/CanvasLayer/TextureRect" unique_id=552627013]
+libraries/ = SubResource("AnimationLibrary_xgpmf")
+
+[editable path="UILayer/ContainerA/ViewportA/Room2WorldA_tscn"]
+[editable path="UILayer/ContainerB/ViewportB/Room2WorldB_tscn"]
