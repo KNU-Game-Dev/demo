@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_cvdvn"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_nccct"]
-[ext_resource type="Script" uid="uid://bccve60gh6x3p" path="res://enemy.gd" id="3_0fai7"]
 [ext_resource type="Texture2D" uid="uid://d325qc0kx0cqu" path="res://sprite/Objects/milk.png" id="3_2rtto"]
+[ext_resource type="Script" uid="uid://cb5ui3ls4l38w" path="res://node_2d.gd" id="3_qvrpv"]
+[ext_resource type="PackedScene" uid="uid://c187hd2m2jxqt" path="res://scene/main_map/player.tscn" id="3_u6yc8"]
 [ext_resource type="Texture2D" uid="uid://1puikxbrklm8" path="res://sprite/Objects/우유 몬스터.png" id="5_qvrpv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
@@ -255,16 +256,18 @@ scale = Vector2(3, 3)
 tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAADAAAAAAACAAAAAAAFAAAAAAAAAAAAAAAHAAAAAAAGAAMAAAA=")
 tile_set = SubResource("TileSet_8hdlm")
 
+[node name="Player" parent="." unique_id=605954817 instance=ExtResource("3_u6yc8")]
+
 [node name="Node2D" type="Node2D" parent="." unique_id=217780496]
+script = ExtResource("3_qvrpv")
 
 [node name="Milk2D" type="CharacterBody2D" parent="Node2D" unique_id=601480449]
-script = ExtResource("3_0fai7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Milk2D" unique_id=1500571583]
 position = Vector2(403, 346)
 scale = Vector2(0.38618916, 0.3982755)
 sprite_frames = SubResource("SpriteFrames_rsxls")
-animation = &"dead"
+animation = &"normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Milk2D" unique_id=1270349294]
 position = Vector2(124, 346.5)

@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://dxhyywhcjrx3j" path="res://scene/theater_light.png" id="1_hpv7h"]
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="2_r4sai"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="3_0d1nl"]
+[ext_resource type="Texture2D" uid="uid://cpwdfn1gy3hfc" path="res://sprite/Tilesets/Wooden_House_Roof_Tilset.png" id="3_1jtbm"]
 [ext_resource type="Texture2D" uid="uid://bu0l5u1nyccdm" path="res://sprite/Objects/풍선 이미지.png" id="4_hpv7h"]
 [ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_1jtbm"]
 [ext_resource type="Script" uid="uid://cu53n3t3tu3" path="res://fliker.gd" id="6_amutu"]
 [ext_resource type="Texture2D" uid="uid://ftyl8e5vylcp" path="res://sprite/Objects/눈.png" id="7_r4sai"]
 [ext_resource type="Texture2D" uid="uid://hoim478bflnw" path="res://sprite/Objects/눈2 (2).png" id="8_0d1nl"]
+[ext_resource type="PackedScene" uid="uid://c187hd2m2jxqt" path="res://scene/main_map/player.tscn" id="9_558tm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("2_r4sai")
@@ -44,6 +46,45 @@ texture = ExtResource("2_r4sai")
 
 [sub_resource type="TileSet" id="TileSet_81rgy"]
 sources/0 = SubResource("TileSetAtlasSource_6so1g")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_amutu"]
+texture = ExtResource("3_1jtbm")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6sa1l"]
+sources/0 = SubResource("TileSetAtlasSource_amutu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6fc8"]
 texture = ExtResource("2_r4sai")
@@ -356,6 +397,10 @@ position = Vector2(-32, 0)
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_81rgy")
 
+[node name="TileMap" type="TileMap" parent="Floor" unique_id=485005244]
+tile_set = SubResource("TileSet_6sa1l")
+format = 2
+
 [node name="Wall" type="TileMapLayer" parent="." unique_id=1485082190]
 position = Vector2(-32, 0)
 scale = Vector2(3, 3)
@@ -383,8 +428,8 @@ sprite_frames = SubResource("SpriteFrames_yhbl5")
 animation = &"orign"
 
 [node name="PointLight2D" type="PointLight2D" parent="Node2D/balloon2D" unique_id=2116107032]
-position = Vector2(571, 340)
-scale = Vector2(0.48435977, 0.5401684)
+position = Vector2(565.00006, 342.99463)
+scale = Vector2(0.48435977, 0.5339007)
 texture = ExtResource("5_1jtbm")
 
 [node name="fliker" type="AnimationPlayer" parent="Node2D/balloon2D/PointLight2D" unique_id=1649405136]
@@ -448,3 +493,6 @@ sprite_frames = SubResource("SpriteFrames_rl652")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D8" unique_id=1699233941]
 position = Vector2(476, 195)
 sprite_frames = SubResource("SpriteFrames_tfedq")
+
+[node name="Player" parent="." unique_id=605954817 instance=ExtResource("9_558tm")]
+position = Vector2(256, 325)
