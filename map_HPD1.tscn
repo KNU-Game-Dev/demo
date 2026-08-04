@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://d325qc0kx0cqu" path="res://sprite/Objects/milk.png" id="3_2rtto"]
 [ext_resource type="Script" uid="uid://cb5ui3ls4l38w" path="res://node_2d.gd" id="3_qvrpv"]
 [ext_resource type="PackedScene" uid="uid://c187hd2m2jxqt" path="res://scene/main_map/player.tscn" id="3_u6yc8"]
+[ext_resource type="Script" uid="uid://68y6yqv18jxc" path="res://scene/main_map/player.gd" id="4_321he"]
+[ext_resource type="Script" uid="uid://br0yyqqxq5mip" path="res://milk_2d.gd" id="4_u6yc8"]
 [ext_resource type="Texture2D" uid="uid://1puikxbrklm8" path="res://sprite/Objects/우유 몬스터.png" id="5_qvrpv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
@@ -257,15 +259,17 @@ tile_map_data = PackedByteArray("AAABAAAAAAABAAAAAAADAAAAAAACAAAAAAAFAAAAAAAAAAA
 tile_set = SubResource("TileSet_8hdlm")
 
 [node name="Player" parent="." unique_id=605954817 instance=ExtResource("3_u6yc8")]
+script = ExtResource("4_321he")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=217780496]
 script = ExtResource("3_qvrpv")
 
 [node name="Milk2D" type="CharacterBody2D" parent="Node2D" unique_id=601480449]
+script = ExtResource("4_u6yc8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Milk2D" unique_id=1500571583]
-position = Vector2(403, 346)
-scale = Vector2(0.38618916, 0.3982755)
+position = Vector2(420.9105, 358.5)
+scale = Vector2(1.5055947, 1.5312495)
 sprite_frames = SubResource("SpriteFrames_rsxls")
 animation = &"normal"
 
@@ -276,3 +280,5 @@ shape = SubResource("RectangleShape2D_0fai7")
 [node name="Timer" type="Timer" parent="Node2D/Milk2D" unique_id=2125103379]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Milk2D" unique_id=738462281]
+
+[connection signal="timeout" from="Node2D/Milk2D/Timer" to="Node2D/Milk2D" method="_on_timer_timeout"]

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bvpfl2his7t6h" path="res://sprite/Objects/balloon.png" id="4_m3nl2"]
 [ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_rad28"]
 [ext_resource type="Script" uid="uid://cu53n3t3tu3" path="res://fliker.gd" id="6_gqi2h"]
+[ext_resource type="PackedScene" uid="uid://c187hd2m2jxqt" path="res://scene/main_map/player.tscn" id="7_utc8h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("1_m3nl2")
@@ -249,9 +250,10 @@ sprite_frames = SubResource("SpriteFrames_yhbl5")
 animation = &"orign"
 
 [node name="PointLight2D" type="PointLight2D" parent="Node2D/balloon2D" unique_id=2116107032]
-position = Vector2(578.5, 290)
+position = Vector2(569, 275)
 scale = Vector2(0.37792966, 0.4845543)
 texture = ExtResource("5_rad28")
+script = ExtResource("6_gqi2h")
 
 [node name="fliker" type="AnimationPlayer" parent="Node2D/balloon2D/PointLight2D" unique_id=1649405136]
 speed_scale = 0.398
@@ -260,3 +262,6 @@ script = ExtResource("6_gqi2h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/balloon2D" unique_id=1329586140]
 position = Vector2(578, 320)
 shape = SubResource("RectangleShape2D_6sa1l")
+
+[node name="Player" parent="." unique_id=605954817 instance=ExtResource("7_utc8h")]
+position = Vector2(318, 343)

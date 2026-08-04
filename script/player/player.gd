@@ -13,6 +13,7 @@ extends CharacterBody2D
 
 func _ready():
 	movement.initialize(self)
+	attack.initialize(self)
 
 func _physics_process(delta):
 	#if menu.visible:

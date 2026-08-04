@@ -431,9 +431,6 @@ animation = &"orign"
 position = Vector2(565.00006, 342.99463)
 scale = Vector2(0.48435977, 0.5339007)
 texture = ExtResource("5_1jtbm")
-
-[node name="fliker" type="AnimationPlayer" parent="Node2D/balloon2D/PointLight2D" unique_id=1649405136]
-speed_scale = 0.398
 script = ExtResource("6_amutu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/balloon2D" unique_id=1329586140]
