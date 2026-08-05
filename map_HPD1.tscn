@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_cvdvn"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_nccct"]
 [ext_resource type="Texture2D" uid="uid://d325qc0kx0cqu" path="res://sprite/Objects/milk.png" id="3_2rtto"]
-[ext_resource type="Script" uid="uid://cb5ui3ls4l38w" path="res://node_2d.gd" id="3_qvrpv"]
 [ext_resource type="PackedScene" uid="uid://c187hd2m2jxqt" path="res://scene/main_map/player.tscn" id="3_u6yc8"]
 [ext_resource type="Script" uid="uid://68y6yqv18jxc" path="res://scene/main_map/player.gd" id="4_321he"]
 [ext_resource type="Script" uid="uid://br0yyqqxq5mip" path="res://milk_2d.gd" id="4_u6yc8"]
@@ -262,7 +261,6 @@ tile_set = SubResource("TileSet_8hdlm")
 script = ExtResource("4_321he")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=217780496]
-script = ExtResource("3_qvrpv")
 
 [node name="Milk2D" type="CharacterBody2D" parent="Node2D" unique_id=601480449]
 script = ExtResource("4_u6yc8")
