@@ -6,6 +6,7 @@ extends Node2D
 var player: CharacterBody2D
 var anim: AnimatedSprite2D
 
+@warning_ignore("shadowed_variable_base_class")
 func initialize(owner):
 	player = owner
 	anim = player.get_node("AnimatedSprite2D")
