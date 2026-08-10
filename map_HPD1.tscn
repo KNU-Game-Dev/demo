@@ -228,8 +228,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fai7"]
-size = Vector2(16, 7)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3rme"]
+size = Vector2(19.75, 16.125)
 
 [node name="MainMap2" type="Node2D" unique_id=1100958087]
 
@@ -263,17 +263,16 @@ script = ExtResource("4_321he")
 [node name="Node2D" type="Node2D" parent="." unique_id=217780496]
 
 [node name="Milk2D" type="CharacterBody2D" parent="Node2D" unique_id=601480449]
+position = Vector2(460, 380)
 script = ExtResource("4_u6yc8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Milk2D" unique_id=1500571583]
-position = Vector2(420.9105, 358.5)
 scale = Vector2(1.5055947, 1.5312495)
 sprite_frames = SubResource("SpriteFrames_rsxls")
 animation = &"normal"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Milk2D" unique_id=1270349294]
-position = Vector2(124, 346.5)
-shape = SubResource("RectangleShape2D_0fai7")
+shape = SubResource("RectangleShape2D_c3rme")
 
 [node name="Timer" type="Timer" parent="Node2D/Milk2D" unique_id=2125103379]
 
