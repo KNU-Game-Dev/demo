@@ -6,10 +6,13 @@
 script = ExtResource("1_k4804")
 
 [node name="Panel" type="Panel" parent="." unique_id=751218520]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = -1
+anchor_right = 0.305
+anchor_bottom = 0.18100001
+offset_right = 79.639984
+offset_bottom = 77.71199
 
 [node name="Label" type="Label" parent="Panel" unique_id=1499348191]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 571.0
+offset_bottom = 211.0

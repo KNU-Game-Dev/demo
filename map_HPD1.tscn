@@ -281,6 +281,6 @@ shape = SubResource("RectangleShape2D_c3rme")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Milk2D" unique_id=738462281]
 
-[node name="CanvasLayer" parent="Node2D" unique_id=1744411635 instance=ExtResource("8_321he")]
+[node name="DialogueBox" parent="." unique_id=1744411635 instance=ExtResource("8_321he")]
 
 [connection signal="timeout" from="Node2D/Milk2D/Timer" to="Node2D/Milk2D" method="_on_timer_timeout"]
