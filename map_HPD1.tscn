@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://ct56prab60wua"]
 
+[ext_resource type="Script" uid="uid://df3tbwsb83y7i" path="res://map_hpd_1.gd" id="1_b5qn0"]
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_cvdvn"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_nccct"]
 [ext_resource type="Texture2D" uid="uid://d325qc0kx0cqu" path="res://sprite/Objects/milk.png" id="3_2rtto"]
@@ -7,6 +8,7 @@
 [ext_resource type="Script" uid="uid://68y6yqv18jxc" path="res://scene/main_map/player.gd" id="4_321he"]
 [ext_resource type="Script" uid="uid://br0yyqqxq5mip" path="res://milk_2d.gd" id="4_u6yc8"]
 [ext_resource type="Texture2D" uid="uid://1puikxbrklm8" path="res://sprite/Objects/우유 몬스터.png" id="5_qvrpv"]
+[ext_resource type="PackedScene" uid="uid://iarck4ccdvq1" path="res://DialogueBox.tscn" id="8_321he"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6so1g"]
 texture = ExtResource("1_cvdvn")
@@ -232,6 +234,7 @@ animations = [{
 size = Vector2(19.75, 16.125)
 
 [node name="MainMap2" type="Node2D" unique_id=1100958087]
+script = ExtResource("1_b5qn0")
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=539620994]
 position = Vector2(-32, 0)
@@ -277,5 +280,7 @@ shape = SubResource("RectangleShape2D_c3rme")
 [node name="Timer" type="Timer" parent="Node2D/Milk2D" unique_id=2125103379]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Milk2D" unique_id=738462281]
+
+[node name="CanvasLayer" parent="Node2D" unique_id=1744411635 instance=ExtResource("8_321he")]
 
 [connection signal="timeout" from="Node2D/Milk2D/Timer" to="Node2D/Milk2D" method="_on_timer_timeout"]

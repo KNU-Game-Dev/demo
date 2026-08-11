@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cw23ye4eucrl3" path="res://sprite/Tilesets/Wooden House.png" id="1_m3nl2"]
 [ext_resource type="Texture2D" uid="uid://dxhyywhcjrx3j" path="res://scene/theater_light.png" id="1_rad28"]
+[ext_resource type="Script" uid="uid://ck7yahocpu15v" path="res://map_hpd_2.gd" id="1_y0o0p"]
 [ext_resource type="Texture2D" uid="uid://ie67xjw6uwcy" path="res://sprite/Objects/Basic_Furniture.png" id="2_rad28"]
 [ext_resource type="Texture2D" uid="uid://bvpfl2his7t6h" path="res://sprite/Objects/balloon.png" id="4_m3nl2"]
 [ext_resource type="Texture2D" uid="uid://dsh5pqqjxkj8e" path="res://sprite/Objects/손전등.png" id="5_rad28"]
@@ -209,6 +210,7 @@ size = Vector2(12, 24)
 
 [node name="MainMap2" type="Node2D" unique_id=1100958087]
 position = Vector2(-13, -35)
+script = ExtResource("1_y0o0p")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1986595805]
 color = Color(0.10438374, 0.10438374, 0.10438374, 1)
